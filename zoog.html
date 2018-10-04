@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+function setup() {
+  createCanvas(500, 400);
+}
+
+function draw() {
+  background(220);
+  
+  
+  
+  //arms
+  fill(230,190,30)
+  stroke(230,190,30)
+  strokeWeight(5)
+  line(280,200,250,230)
+  line(320,200,350,230)
+  strokeWeight()//sets back to 0
+  
+  //legs
+  rectMode(CORNER)
+  rect(285,250,7,20)
+  rect(310,250,7,20)
+  
+  //color-base
+  fill(240,200,40)
+  strokeWeight()//makes border 0 so it looks better
+  
+  
+  //torso
+  rectMode(CENTER)
+  rect(300,150,20,50)//...10,25)
+  rect(300,200,40,100)//...20,50)
+  
+  //triangle
+  triangle(280,150,290,150,290,125)//triangle(ax,ay,bx,by,cx,cy) going clockwise from the top
+  triangle(320,150,310,150,310,125)//third triangle's b = 290,125 c = 310,125
+  fill(180)
+  triangle(300,75,290,125,310,125)//uses the top points of the last two triangles as a base
+  
+  
+  //face
+  fill("black")
+  //eyes, then mouth, then words
+  ellipse(290,175,12,12)
+  ellipse(310,175,12,12)
+  rect(300,200,30,7)
+  textSize(20)
+  text("pew pew! I'm a bullet." ,50,175)
+  
+}
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/Jonathanc6522/p5js/blob/master/zoog.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
